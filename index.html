@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="keywords" content="">
-<meta name="description" content="个人简介，网站设计" />
+<meta name="description" content="nt的博客" />
 <title>My Web</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/base.css" media="screen" />
@@ -13,11 +13,11 @@
 <nav>
 <div class="top marginAuto">
 		
-<h1 class="fl fontBase"><a href="#"><span class="fcf">Navo </span><span class="fcff6">Craft</span></a></h1>
+<h1 class="fl fontBase"><a href="#"><span class="fcf">大 </span><span class="fcff6">数据</span></a></h1>
 			
 			<ul class="nav fl">
 				<li><a href="index.html">Home</a></li>
-				<li><a href="#">About Us</a></li>
+				<li><a href="#">About me</a></li>
 				<li><a href="#">Contact Us</a></li>
 			</ul>
 			<a class="link-right fr mr20 " href="javascript:;" onclick="show()">注册</a>
@@ -28,8 +28,15 @@
 		<div class="con margin30 mt90" >
 					<div class="con_left fl  pl20 pr20 pb10 border1 br5">
 						<div class="article mt30">
-							<h2><a href="detail01.html">苹果iPhone6眼球扫描配件问世</a></h2>
-								<p >D-EYE是一家意大利公司，致力于提供价格合理的大众医疗健康检查系统。本周三，D-EYE公司宣布准备推出一款同名的基于iPhone的视网膜成像配件。这款配件D-EYE是为专业医疗人员设计的，它可以将iPhone5和iPhone6变成便携式的“眼底镜”，用于扫描眼睛的基底或眼球的内壁。这个配件巧妙利用了iPhone的摄像头、图片处理和通信功能，因而能够以较低的成本介入医学临床扫描领域。“我们很高兴能够帮助到数百万人，包括很多处在医疗服务较差的地区的人们，用我们的廉价的视网膜扫描功能帮助他们得到适当的眼部护理。”D-EYE公司的CEO理查德-希尔（RichardSill）说，“D-EYE在远程医疗方面的应用将会打破传统的时空界限，让全世界的专家来帮助诊断和治疗。对于医疗条件简陋的地区或无法出远门的病人来说，这简直就是一种福音。”</p>
+							<h2><a href="detail01.html">解决克隆后eth0不见的问题</a></h2>
+								<p >直接修改  /etc/sysconfig/network-script/ifcfg-eth0
+删掉UUID  HWADDR
+配置静态地址
+然后：
+修改这个文件 　/etc/udev/rules.d/70-persistent-net.rules
+将其中的eth1的物理地址复制给eth0，然后删掉eth1的配置 
+
+然后 reboot”</p>
 						</div>
 						<div class="article mt30">
 							<h2><a href="#">谷歌I/O黑科技：触摸屏搬到牛仔布上</a></h2>
