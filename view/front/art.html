@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=width-device,initial-scale=1,user-scalable=no">
+	<title>myblog</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/js.js"></script>
+</head>
+<body>
+		<div class="banner_box" id="imgBox">		
+			<img src="images/banner.jpg">
+			<div class="logo"><span><i class="fa-angellist"></i></span></div>	
+		</div>
+		<!-- 导航栏 -->
+		<div class="navbar navbar-inverse " role="navigation" id="nav">
+			  <div class="navbar-header">
+			     　<!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 -->
+			       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			         <span class="sr-only">Toggle Navigation</span>
+			         <span class="icon-bar"></span>
+			         <span class="icon-bar"></span>
+			         <span class="icon-bar"></span>
+			       </button>
+			       <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
+			        <a href="##" class="navbar-brand">MyBlog</a>
+			  </div>
+			  <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+			  <div class="collapse navbar-collapse navbar-responsive-collapse">
+			    	<ul class="nav navbar-nav">
+			      		<li class="active"><a href="index.php">微日志</a></li>
+			      		<li><a href="friends.php">生活圈</a></li>
+			      		<li><a href="about.php">关于自己</a></li>
+				 	</ul>
+			  </div>
+		</div>
+		<!-- 导航栏结束 -->
+		<!-- 主体部分 -->
+		<article class="body_main">
+			<div class="wrap">
+			<section class="body_left">
+				<div class="art_main">
+	                <h3><a href="javascript:#"><?php echo $art['title'];?></a></h3>
+	                <div class="entry_header">
+	                	<a class="catlink" href="##">作者:汤姆猫&nbsp;</a>
+	                    <time><?php echo date('Y/m/d' , $art['pubtime']);?>&nbsp;</time>
+	                    <!-- <a href="#">bill</a> -->    
+	                    <a class="comment"><?php echo $art['comm'];?>条评论</a>
+	                </div>
+	                <div class="entry_content">
+	                    <p><?php echo $art['content'];?></p>
+	                </div>
+				</div>
+				
+				<?php if($comms) {?>
+				<div id="comments">
+					<h3>评论列表</h3>
+					<?php foreach($comms as $c) {?>
+	                <ol>
+	                    <li>
+	                        <img src="https://secure.gravatar.com/avatar/582b66ad5ae1b69c7601a990cb9a661a?s=50&d=identicon&r=pg" alt="">
+	                        <cite><?php echo $c['nick'];?></cite> <br>
+	                        <time><?php echo date('Y年m月d日 H:i' , $c['pubtime']);?></time>
+	                    </li>
+	                    <li class="comment-respond-content">
+	                        <?php echo $c['content'];?>
+	                    </li>
+	                </ol>
+	                <?php }?> 
+            	</div>
+            	<?php  }?>
+	            <div id="respond" class="comment-respond">
+	                <h3>发布评论</h3>
+	                <?php if(isset($rs) && ($rs == false)) {?>
+                	<p style="color:red;">留言发布失败</p>
+                	<?php  }?>
+	                <form action="" method="post">
+	                    <p>
+	                    	<input placeholder="昵 称" name="nick" type="text" value="" size="30" required="required">
+	                    </p>
+	                    <p>
+	                    	<input placeholder="邮 箱" name="email" type="email" value="" size="30" required="required">
+	                    </p>
+	                    <p>
+	                    	<textarea placeholder="编辑评论内容" name="content" cols="45" rows="8" aria-required="true" required="required"></textarea>
+	                    <p>
+	                    	<button type="submit" class="btn btn-primary">提 交</button>
+	                    	<button type="reset" class="btn btn-primary">取 消</button>
+	                	</p>
+	                </form>
+	            </div>
+				
+ 			</section>
+
+			<!--页面右边部分开始- -->
+			<section class="body_right">						
+				<div class="art_title right_box box_1">
+					<h4>文章列表<i class="i fa-file-text-o"></i></h4>
+	                <ul>
+	                	<?php foreach($allArt as $a){ ?>
+	                    <li><a href="art.php?art_id=<?php echo $a['art_id']?>"><?php echo mb_substr($a['title'],0,8,'utf-8').'...';?></a><time><?php echo date('Y/m/d' , $a['pubtime']);?></time></li>
+	                    <?php }?>
+	                </ul>  
+				</div>
+				<div class="right_box box_2">
+					<h4>生活圈<i class="fa-street-view"></i></h4>
+	                <ul>
+	                    <li class="active"><a href="">朋友圈</a></li>
+	                    <li><a href="">生活点滴</a></li>
+	                    <li><a href="">旅游达人</a></li>
+	                </ul>
+				</div>
+				<div class="right_box box_3">
+					<h4>交流社区<i class="fa-comments-o"></i></h4>
+	                <ul>
+	                    <li class="" title="进群当面聊">qq群:12345678</li>
+	                    <li class="" title="关注微信公众号">微 信:广州恒大</li>
+	                    <li class="label label-primary" title="官方微博"> <a href="http://weibo.com/gzevergrandefc" target="_blank">微 博:广州恒大</a></li>
+	                </ul>
+				</div>
+			</section>
+			</div>
+		</article>
+
+		 <!-- 底部部分 -->
+		<footer>
+			<section class="footer_main">
+				<div class="footer_box">
+					<ul>
+						<li><a href="index.php" >网站首页</a></li>
+						<li><a href="feedback.php#contact" target="_blank">联系我们</a></li>
+						<li><a href="feedback.php#about" target="_blank">关于我们</a></li>
+						<li><a href="feedback.php#advise" target="_blank">意见反馈</a></li>								
+					</ul>
+					<ul>
+						<li class="hover_qq">
+							<a href="http://t.qq.com/gzevergrandefbc" target="_blank"><i class="fa-qq"></i></a>
+						</li>
+						<li class="hover_wechat">
+							<figcaption class="wechat">
+								<img src="./images/wechat.jpg" />
+								<p style="line-height: 12px;font-size: 12px;margin:5px">扫描二维码 </p>
+								<p style="line-height: 12px;font-size: 12px;margin:5px 0 3px">关注微信公众号</p>
+							</figcaption>
+							<a href="##" ><i class="fa fa-wechat"></i></a>
+						</li>
+						<li class="hover_weibo">
+							<a href="http://weibo.com/gzevergrandefc" target="_blank"><i class="fa fa-weibo"></i></a>
+						</li>
+					</ul>					
+				</div>
+				<div class="copyright">
+					<p>Copyright © 2016 localhsot.com All Rights Reserved</p>
+				</div>
+				<div class="sm_footer">
+					<ul>
+						<li><a href="index.php">首页</a></li>
+						<li><a href="feedback.php#about">关于</a></li>
+						<li><a href="feedback.php#advise">吐槽</a></li>
+					</ul>
+				</div>
+			</section>
+		</footer>
+		
+		<div class="siderbar">
+			<p id="back_top"><a title="回到顶部"><i class="fa fa-chevron-up"></i></a></p>
+			<p><a href="feedback.php" target="_blank" title="联系我们"><i class="fa fa-envelope-o"></i></a></p>
+			<p><a href="feedback.php" target="_blank" title="问题反馈"><i class="fa-pencil-square-o"></i></a></p>
+		</div>
+</body>
+</html>

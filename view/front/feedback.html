@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=width-device,initial-scale=1,user-scalable=no">
+	<title>myblog</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/js.js"></script>
+	
+</head>
+	<body data-spy="scroll" data-target="#myScrollspy">
+
+		<!-- 导航栏 -->
+		<div class="navbar navbar-inverse " role="navigation" id="nav">
+			  <div class="navbar-header">
+			     　<!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 -->
+			       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			         <span class="sr-only">Toggle Navigation</span>
+			         <span class="icon-bar"></span>
+			         <span class="icon-bar"></span>
+			         <span class="icon-bar"></span>
+			       </button>
+			       <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
+			        <a href="##" class="navbar-brand">MyBlog</a>
+			  </div>
+			  <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+			  <div class="collapse navbar-collapse navbar-responsive-collapse">
+			    	<ul class="nav navbar-nav">
+			      		<li><a href="index.php">微日志</a></li>
+			      		<li><a href="friends.php">生活圈</a></li>
+			      		<li><a href="about.php">关于自己</a></li>
+				 	</ul>
+			  </div>
+		</div>
+		<!-- 导航栏结束 -->
+		<!-- 主体部分 -->
+		<article>
+			<div class="feed_box">
+	 			<div class="col-xs-3" id="myScrollspy">
+		            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+		                <li class="active"><a href="#about">关于我们</a></li>
+						<li><a href="#contact">联系我们</a></li>
+						<li><a href="#advise">意见反馈</a></li>
+		            </ul>
+		       	</div>
+				<section class="feed_content">
+					<div id="about">
+						<h3>关于我们</h3>
+						<h4>喜欢足球吗?</h4>
+						<p>喜欢足球,足球非常有激情</p>
+						<h4>喜好的球队?</h4>
+						<p>当然是广州恒大,恒大是中国广州的一所职业足球俱乐部，两次亚冠冠军,升超以来连续五年冠军</p>
+						<h4>不说点什么吗?</h4>
+						<p>广州恒大淘宝足球俱乐部前身是成立于1977年的广州市足球运动队。1993年，广州足球队通过和太阳神集团合作，成为中国第一家政府与企业合股的职业足球俱乐部。2010年3月1日，恒大集团买断球队全部股权，俱乐部更名为广州恒大足球俱乐部。2012年俱乐部首次参加亚洲足球俱乐部冠军联赛并进入八强，2013年获得亚洲足球俱乐部冠军联赛冠军，这也是中国俱乐部第一次问鼎该项赛事的冠军，同年获亚足联最佳俱乐部奖。2014年6月5日，阿里巴巴入股恒大俱乐部50%的股权；同年7月4日俱乐部更名为广州恒大淘宝足球俱乐部。2015年2月26日，里皮辞去恒大主教练职务，卡纳瓦罗接任；同年6月4日恒大官方宣布卡纳瓦罗下课，巴西名帅路易斯·菲利佩·斯科拉里上任。</p>
+					</div>
+					<div id="contact">
+						<h3>联系我们</h3>
+						<h4>关注我们,我们当面聊!</h4>
+						<p style="color: #666;"><i class="fa-qq"></i>&nbsp;1204468254</p>
+						<p style="color: #666;"><i class="fa fa-envelope-o"></i>&nbsp;1204468254@qq.com</p>
+						<p>扫面以下二维码,关注公众号</p>
+						<img src="./images/wechat.jpg" alt=""/>
+					</div>
+					<div id="advise">
+						<h3>意见反馈</h3>
+						<form action="" method="post">
+							<input type="email" name="contact" placeholder="留下邮箱便我们联系您" />
+							<textarea name="content" required="required" placeholder="您的建议对我们有非常大的作用"></textarea>
+							<button type="submit" class="btn btn-default">提 交</button>
+							<button type="reset" class="btn btn-default">取 消</button>
+						</form>
+					</div>
+				</section>
+			</div>
+		</article>
+		
+		 <!-- 底部部分 -->
+			<footer>
+			<section class="footer_main">
+				<div class="footer_box">
+					<ul>
+						<li><a href="index.php" >网站首页</a></li>
+						<li><a href="feedback.php#contact" target="_blank">联系我们</a></li>
+						<li><a href="feedback.php#about" target="_blank">关于我们</a></li>
+						<li><a href="feedback.php#advise" target="_blank">意见反馈</a></li>					
+					</ul>
+					<ul>
+						<li class="hover_qq">
+							<a href="http://t.qq.com/gzevergrandefbc" target="_blank"><i class="fa-qq"></i></a>
+						</li>
+						<li class="hover_wechat">
+							<figcaption class="wechat">
+								<img src="./images/wechat.jpg" />
+								<p style="line-height: 12px;font-size: 12px;margin:5px">扫描二维码 </p>
+								<p style="line-height: 12px;font-size: 12px;margin:5px 0 3px">关注微信公众号</p>
+							</figcaption>
+							<a href="##" ><i class="fa fa-wechat"></i></a>
+						</li>
+						<li class="hover_weibo">
+							<a href="http://weibo.com/gzevergrandefc" target="_blank"><i class="fa fa-weibo"></i></a>
+						</li>
+					</ul>					
+				</div>
+				<div class="copyright">
+					<p>Copyright © 2016 localhsot.com All Rights Reserved</p>
+				</div>
+				<div class="sm_footer">
+					<ul>
+						<li><a href="##">首页</a></li>
+						<li><a href="##">关于</a></li>
+						<li><a href="##">吐槽</a></li>
+					</ul>
+				</div>
+			</section>
+		</footer>
+		
+		<div class="siderbar">
+			<p id="back_top"><a title="回到顶部"><i class="fa fa-chevron-up"></i></a></p>
+			<p><a href="feedback.php#contact" target="_blank" title="联系我们"><i class="fa fa-envelope-o"></i></a></p>
+			<p><a href="feedback.php#advise" target="_blank" title="问题反馈"><i class="fa-pencil-square-o"></i></a></p>
+		</div>
+	</body>
+	
+</html>
